@@ -31,7 +31,7 @@ class BuildIcon extends StatelessWidget {
       return Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.asset(item.icon ,height: 22,width: 22),
+          Image.asset(item.icon ,height: 22,width: 22, color: Colors.pink),
           PositionedDirectional(
             start: iconSize - sizeBadge / 2,
             top: -sizeBadge / 2,
