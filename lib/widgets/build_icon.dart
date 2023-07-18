@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../tab_item.dart';
 import '../count_style.dart';
@@ -19,10 +22,10 @@ class BuildIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget icon = Image.asset(
-      item.icon.toString(),height: 22,width: 22
+    Widget icon = SvgPicture.asset(
+      item.icon.toString(),
+      color: Colors.black,
       // size: iconSize,
-      
       // color: iconColor,
     );
     if (item.count is Widget) {
@@ -31,7 +34,7 @@ class BuildIcon extends StatelessWidget {
       return Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.asset(item.icon ,height: 22,width: 22, color: Colors.pink),
+          SvgPicture.asset(item.icon,height: 22,width: 22,color: Colors.white),
           PositionedDirectional(
             start: iconSize - sizeBadge / 2,
             top: -sizeBadge / 2,
