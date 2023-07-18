@@ -20,8 +20,9 @@ class BuildIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget icon = Image.asset(
-      item.icon.toString(),
+      item.icon.toString(),height: 22,width: 22
       // size: iconSize,
+      
       // color: iconColor,
     );
     if (item.count is Widget) {
@@ -30,7 +31,7 @@ class BuildIcon extends StatelessWidget {
       return Stack(
         clipBehavior: Clip.none,
         children: [
-          Image.asset(item.icon),
+          Image.asset(item.icon ,height: 22,width: 22),
           PositionedDirectional(
             start: iconSize - sizeBadge / 2,
             top: -sizeBadge / 2,
