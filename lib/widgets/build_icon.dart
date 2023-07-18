@@ -12,6 +12,7 @@ class BuildIcon extends StatelessWidget {
   final Color iconColor;
   final CountStyle? countStyle;
 
+
   const BuildIcon({
     Key? key,
     required this.item,
@@ -24,9 +25,8 @@ class BuildIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget icon = SvgPicture.asset(
       item.icon.toString(),
-      color: item.isSelected ? Colors.black : Colors.white,
       // size: iconSize,
-      // color: iconColor,
+       color: iconColor,
     );
     if (item.count is Widget) {
       double sizeBadge = countStyle?.size ?? 18;
@@ -34,7 +34,12 @@ class BuildIcon extends StatelessWidget {
       return Stack(
         clipBehavior: Clip.none,
         children: [
-          SvgPicture.asset(item.icon,height: 22,width: 22,color: Colors.white),
+          SvgPicture.asset(item.icon,height: 22,width: 22,color: iconColor),
+          // Icon(
+          //   item.icon,
+          //   size: iconSize,
+          //   color: iconColor,
+          // ),
           PositionedDirectional(
             start: iconSize - sizeBadge / 2,
             top: -sizeBadge / 2,
