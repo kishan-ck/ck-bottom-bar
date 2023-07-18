@@ -24,7 +24,7 @@ class BuildIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget icon = SvgPicture.asset(
       item.icon.toString(),
-      color: Colors.black,
+      color: item.isSelected ? Colors.black : Colors.white,
       // size: iconSize,
       // color: iconColor,
     );
